@@ -138,3 +138,83 @@
     <section id="funcionalidades">
       <div class="container">
         <div class="section-head">
+          <span class="eyebrow">Elige una opcion</span>
+          <h2>Â¿Que quieres revisar primero?</h2>
+          <p class="lead">Desde aqui puedes entrar a las herramientas principales sin salir de la pagina: analizar una oferta, verificar una empresa, revisar tu historial o consultar reportes comunitarios.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Analizar oferta</h3>
+            <p>Detecta pagos previos, urgencia, phishing, salarios irreales y solicitud de datos personales.</p>
+            <div class="actions"><a class="btn primary small" href="#analizar">Abrir analizador</a></div>
+          </article>
+          <article class="card">
+            <h3>Verificar empresa</h3>
+            <p>Contrasta empresa, RUC, correo, sitio web, redes, ubicacion y reputacion.</p>
+            <div class="actions"><a class="btn secondary small" href="#verificar">Verificar datos</a></div>
+          </article>
+          <article class="card">
+            <h3>Historial privado</h3>
+            <p>Revisa analisis guardados, ordenalos por riesgo y elimina lo que ya no necesites.</p>
+            <div class="actions"><a class="btn secondary small" href="#historial">Ver historial</a></div>
+          </article>
+          <article class="card">
+            <h3>Comunidad segura</h3>
+            <p>Reporta ofertas sospechosas y valida alertas compartidas por otros usuarios.</p>
+            <div class="actions"><a class="btn secondary small" href="#comunidad">Ver comunidad</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="analizar">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Analizador</span>
+          <h2>Analizar oferta laboral</h2>
+          <p class="lead">Pega una oferta o enlace. FakeJob Detector calcula el nivel de riesgo, muestra seÃ±ales detectadas, explica el resultado y recomienda acciones preventivas.</p>
+        </div>
+        <form class="panel form-grid" id="analysisForm">
+          <div>
+            <label for="offerText">Oferta laboral o mensaje recibido</label>
+            <textarea id="offerText" placeholder="Ejemplo: Trabajo remoto, gana S/500 al dia. Escribenos por WhatsApp y paga S/50 para separar tu vacante."></textarea>
+            <p class="muted" id="analysisHelp" style="margin:8px 0 0">Ingresa al menos 25 caracteres o una URL completa. El boton se activara cuando el contenido sea suficiente.</p>
+          </div>
+          <div class="inline-grid">
+            <div>
+              <label for="sourceChannel">Canal donde la encontraste</label>
+              <select id="sourceChannel">
+                <option>LinkedIn</option>
+                <option>Computrabajo</option>
+                <option>Facebook</option>
+                <option>WhatsApp</option>
+                <option>Telegram</option>
+                <option>Correo</option>
+              </select>
+            </div>
+            <div>
+              <label for="analysisMode">Modo de analisis</label>
+              <select id="analysisMode">
+                <option>Texto y enlaces</option>
+                <option>Solo texto</option>
+                <option>Validacion rapida</option>
+              </select>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn primary" id="analyzeButton" type="submit" disabled>Analizar ahora</button>
+            <button class="btn secondary" id="exampleBtn" type="button">Cargar ejemplo riesgoso</button>
+          </div>
+          <div class="result-box" id="analysisResult" aria-live="polite">
+            <span class="badge">Esperando analisis</span>
+            <p class="muted" style="margin:12px 0 0">El resultado mostrara porcentaje, clasificacion, senales, recomendaciones y opciones para guardar o compartir.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="band" id="verificar">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Validacion complementaria</span>
+          <h2>Verificar empresa, RUC, correo y sitio web</h2>
