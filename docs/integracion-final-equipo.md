@@ -21,3 +21,4 @@ Generado: dom 14/06/2026 15:36:27.47
 2026-04-07 docs: investigacion inicial de se├▒ales de fraude
 2026-04-07 docs: top 5 patrones de estafa salarial
 2026-04-13 docs: lista de plataformas de verificacion de empleos
+2026-04-14 docs: casos de estudio de estafa por pago adelantado
