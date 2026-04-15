@@ -218,3 +218,222 @@
         <div>
           <span class="eyebrow">Validacion complementaria</span>
           <h2>Verificar empresa, RUC, correo y sitio web</h2>
+          <p class="lead" style="color:#DCE8F7">Comprueba si una oferta usa datos confiables de empresa, dominio corporativo y seÃ±ales comunitarias antes de entregar informaciÃ³n personal.</p>
+          <div class="card">
+            <h3>Criterios de confianza visibles</h3>
+            <p>El resultado separa busqueda interna, validacion formal por RUC, revision de correo/dominio y reportes comunitarios. Asi el usuario sabe por que confiar o desconfiar.</p>
+          </div>
+        </div>
+        <form class="panel form-grid" id="verifyForm">
+          <div class="inline-grid">
+            <div>
+              <label for="companyName">Nombre de empresa</label>
+              <input id="companyName" placeholder="Ej. Andina Talent SAC" />
+            </div>
+            <div>
+              <label for="ruc">RUC</label>
+              <input id="ruc" placeholder="Ej. 20123456789" />
+            </div>
+          </div>
+          <div class="inline-grid">
+            <div>
+              <label for="email">Correo del reclutador</label>
+              <input id="email" placeholder="rrhh@empresa.com" />
+            </div>
+            <div>
+              <label for="website">Sitio web o enlace</label>
+              <input id="website" placeholder="https://empresa.com/oferta" />
+            </div>
+          </div>
+          <button class="btn primary" type="submit">Verificar datos</button>
+          <div class="result-box" id="verifyResult" aria-live="polite">
+            <span class="badge">Sin consulta</span>
+            <p class="muted" style="margin:12px 0 0">Aqui se mostraran legitimidad, reputacion, redes, ubicacion y posibles alertas.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="historial">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Historial privado</span>
+          <h2>Guardar, buscar, ordenar y revisar analisis</h2>
+          <p class="lead">Conserva tus revisiones recientes, vuelve a consultar detalles importantes y elimina lo que ya no necesites.</p>
+        </div>
+        <div class="panel">
+          <div class="toolbar">
+            <input id="historySearch" style="max-width:340px" placeholder="Buscar por texto o riesgo" />
+            <select id="historySort" style="max-width:220px">
+              <option value="recent">Mas recientes</option>
+              <option value="risk">Mayor riesgo</option>
+              <option value="label">Nivel de riesgo</option>
+            </select>
+            <button class="btn ghost small" id="clearHistory" type="button">Eliminar historial</button>
+          </div>
+          <div class="history-list" id="historyList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comunidad">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Comunidad segura</span>
+          <h2>Reportar y validar nuevas estafas</h2>
+          <p class="lead">La comunidad permite reportar ofertas fraudulentas, ver alertas de otros usuarios, validar reportes y denunciar comportamiento sospechoso.</p>
+          <form class="panel form-grid" id="reportForm">
+            <div class="inline-grid">
+              <div>
+                <label for="reportCompany">Empresa u oferta</label>
+                <input id="reportCompany" placeholder="Ej. Asistente remoto - Talento Peru" />
+              </div>
+              <div>
+                <label for="reportPlatform">Plataforma</label>
+                <select id="reportPlatform">
+                  <option>WhatsApp</option>
+                  <option>Facebook</option>
+                  <option>LinkedIn</option>
+                  <option>Correo</option>
+                  <option>Telegram</option>
+                  <option>Otra</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="reportType">Tipo de fraude identificado</label>
+              <select id="reportType">
+                <option>Solicita pago previo</option>
+                <option>Robo de datos personales</option>
+                <option>Phishing o enlace sospechoso</option>
+                <option>Suplantacion de empresa</option>
+                <option>Promesa de ingresos irreales</option>
+              </select>
+            </div>
+            <div>
+              <label for="reportText">Reporte comunitario</label>
+              <textarea id="reportText" placeholder="Describe la oferta sospechosa, empresa usada, canal y senales detectadas."></textarea>
+            </div>
+            <button class="btn primary" type="submit">Enviar reporte</button>
+            <div class="result-box" id="reportResult" aria-live="polite">
+              <span class="badge">Reporte sin enviar</span>
+              <p class="muted" style="margin:12px 0 0">Despues del envio veras una vista previa con estado, plataforma y tipo de fraude.</p>
+            </div>
+          </form>
+        </div>
+        <div class="panel">
+          <h3>Alertas recientes</h3>
+          <div class="report-list" id="reportList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recursos" class="band">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Educacion digital</span>
+          <h2>Recomendaciones y aprendizaje preventivo</h2>
+          <p class="lead" style="color:#DCE8F7">La solucion no solo alerta: explica el riesgo y ayuda a que el usuario aprenda a reconocer patrones de fraude por si mismo.</p>
+        </div>
+        <div class="three-col">
+          <article class="card"><h3>Leer una URL</h3><p>Verifica dominio, protocolo HTTPS, subdominios extraÃ±os y acortadores sospechosos.</p></article>
+          <article class="card"><h3>Pagos previos</h3><p>Ningun proceso laboral confiable debe pedir dinero para reservar vacantes, examenes o capacitaciones falsas.</p></article>
+          <article class="card"><h3>Datos personales</h3><p>No compartas DNI, cuentas bancarias o fotos de documentos antes de validar empresa y canal oficial.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cuenta">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Cuenta y preferencias</span>
+          <h2>Gestiona tu cuenta y preferencias</h2>
+          <p class="lead">Accede a tus analisis guardados, actualiza tu perfil y ajusta la visualizacion de la plataforma.</p>
+          <div class="card">
+            <h3>Privacidad aplicada</h3>
+            <p>FakeJob Detector solicita solo la informacion necesaria para revisar ofertas y evita permisos del dispositivo que no aportan a la verificacion.</p>
+          </div>
+        </div>
+        <div class="panel form-grid">
+          <div class="inline-grid">
+            <div>
+              <label for="userName">Nombre</label>
+              <input id="userName" placeholder="Tu nombre" />
+            </div>
+            <div>
+              <label for="userEmail">Correo</label>
+              <input id="userEmail" placeholder="correo@ejemplo.com" />
+            </div>
+          </div>
+          <div class="inline-grid">
+            <button class="btn primary" id="registerBtn" type="button">Crear cuenta</button>
+            <button class="btn secondary" id="loginBtn" type="button">Iniciar sesion</button>
+          </div>
+          <div class="inline-grid">
+            <button class="btn ghost" id="recoverBtn" type="button">Recuperar contraseÃ±a</button>
+            <button class="btn ghost" id="profileBtn" type="button">Editar perfil</button>
+          </div>
+          <div class="inline-grid">
+            <button class="btn ghost" id="prefsBtn" type="button">Guardar preferencias</button>
+            <button class="btn danger" id="logoutBtn" type="button">Cerrar sesion</button>
+          </div>
+          <div class="result-box" id="accountResult" aria-live="polite">
+            <span class="badge">Cuenta</span>
+            <p class="muted" style="margin:12px 0 0">Completa tus datos para acceder a funciones personalizadas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Feedback de usuarios</span>
+          <h2>Enviar comentarios sobre la aplicacion</h2>
+          <p class="lead">Ayuda a mejorar la plataforma y reporta comportamientos sospechosos dentro de la comunidad.</p>
+        </div>
+        <form class="panel form-grid" id="feedbackForm">
+          <div>
+            <label for="feedbackText">Comentario</label>
+            <textarea id="feedbackText" placeholder="CuÃ©ntanos que funciono bien o que deberia mejorar."></textarea>
+          </div>
+          <div class="inline-grid">
+            <button class="btn primary" type="submit">Enviar feedback</button>
+            <button class="btn ghost" id="maliciousBtn" type="button">Denunciar usuario malicioso</button>
+          </div>
+          <div class="result-box" id="feedbackResult" aria-live="polite">
+            <span class="badge">Sin envio</span>
+            <p class="muted" style="margin:12px 0 0">Tus comentarios ayudan a priorizar mejoras de seguridad y usabilidad.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-card">
+        <div>
+          <span class="eyebrow">Comienza ahora</span>
+          <h2>Revisa tu proxima oferta antes de responder.</h2>
+          <p>Analiza el texto, verifica la empresa y comparte alertas con la comunidad para reducir el riesgo de fraude laboral digital.</p>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="#analizar">Analizar una oferta</a>
+          <a class="btn secondary" href="#verificar">Verificar empresa</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>FakeJob Detector - Team Coworkers</span>
+      <span>Prevencion social contra fraudes laborales digitales</span>
+    </div>
+  </footer>
+
+  <a class="back-to-top" href="#inicio" aria-label="Volver al inicio">â†‘</a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
