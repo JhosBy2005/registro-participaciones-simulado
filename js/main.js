@@ -348,3 +348,36 @@
       `;
       renderReports();
     });
+
+    ["registerBtn", "loginBtn", "recoverBtn", "profileBtn", "prefsBtn", "logoutBtn"].forEach(id => {
+      qs(`#${id}`).addEventListener("click", event => {
+        const action = event.target.textContent;
+        qs("#accountResult").innerHTML = `<span class="badge low">${action} completado</span><p class="muted" style="margin:12px 0 0">Accion completada sin solicitar permisos adicionales.</p>`;
+      });
+    });
+
+    qs("#themeToggle").addEventListener("click", () => {
+      const isDark = document.documentElement.dataset.theme === "dark";
+      document.documentElement.dataset.theme = isDark ? "" : "dark";
+      qs("#themeToggle").textContent = isDark ? "Modo oscuro" : "Modo claro";
+    });
+
+    qs("#feedbackForm").addEventListener("submit", event => {
+      event.preventDefault();
+      qs("#feedbackResult").innerHTML = `<span class="badge low">Feedback guardado</span><p class="muted" style="margin:12px 0 0">Gracias. Tu comentario ayudara a mejorar la experiencia.</p>`;
+      qs("#feedbackText").value = "";
+    });
+
+    qs("#maliciousBtn").addEventListener("click", () => {
+      qs("#feedbackResult").innerHTML = `<span class="badge high">Denuncia registrada</span><p class="muted" style="margin:12px 0 0">Se registro una denuncia demo para revision de la comunidad.</p>`;
+    });
+
+    renderHistory();
+    renderReports();
+    validateAnalysisInput();
+
+// Team contribution: Jimena Curi - app readiness marker for interaction checks.
+function markFakeJobAppReady() {
+  document.documentElement.dataset.fakejobReady = "true";
+}
+markFakeJobAppReady();
