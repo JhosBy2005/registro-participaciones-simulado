@@ -2,3 +2,4 @@
 IHC y Tecnologias Moviles - UPC 202610
 
 2026-04-14 Santana: Configurar .gitignore y ajustes del repositorio
+2026-04-20 Santana: Agregar labels ARIA faltantes en elementos interactivos
