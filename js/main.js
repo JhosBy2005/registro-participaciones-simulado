@@ -228,3 +228,156 @@
               <button class="btn danger small" type="button" onclick="deleteItem(${item.id})">Eliminar</button>
             </div>
           </div>
+        </article>
+      `).join("");
+    }
+
+    window.showDetail = function(id) {
+      const item = readJson(storageKey, []).find(entry => entry.id === id);
+      if (!item) return;
+      alert(`Detalle del analisis\n\nRiesgo: ${item.level} (${item.score}%)\nSeÃ±ales: ${item.signals.join(", ") || "sin seÃ±ales"}\n\n${item.text}`);
+    };
+
+    window.deleteItem = function(id) {
+      writeJson(storageKey, readJson(storageKey, []).filter(entry => entry.id !== id));
+      renderHistory();
+    };
+
+    function renderReports() {
+      const defaults = [
+        { id: 1, company: "Asistente remoto", platform: "WhatsApp", type: "Solicita pago previo", text: "Oferta por WhatsApp solicita S/50 para separar entrevista.", votes: 12, status: "En revision comunitaria" },
+        { id: 2, company: "Reclutador no identificado", platform: "Correo", type: "Promesa de ingresos irreales", text: "Correo no corporativo promete trabajo remoto con pago diario.", votes: 7, status: "Publicado como alerta" }
+      ];
+      const reports = readJson(reportsKey, defaults);
+      qs("#reportList").innerHTML = reports.map(report => `
+        <article class="item">
+          <span class="badge mid">${report.status || "En revision comunitaria"}</span>
+          <h3 style="margin-top:10px">${report.company || "Oferta reportada"}</h3>
+          <p class="muted">Plataforma: ${report.platform || "No indicada"} Â· Tipo: ${report.type || "No indicado"}</p>
+          <p><strong>Vista previa del reporte:</strong></p>
+          <p>${report.text}</p>
+          <p class="muted">Validaciones comunitarias: ${report.votes}</p>
+          <div class="actions">
+            <button class="btn secondary small" type="button" onclick="validateReport(${report.id})">Validar reporte</button>
+            <button class="btn ghost small" type="button" onclick="alert('Alerta compartida correctamente.')">Compartir alerta</button>
+          </div>
+        </article>
+      `).join("");
+      writeJson(reportsKey, reports);
+    }
+
+    window.validateReport = function(id) {
+      const reports = readJson(reportsKey, []);
+      const next = reports.map(report => report.id === id ? { ...report, votes: report.votes + 1 } : report);
+      writeJson(reportsKey, next);
+      renderReports();
+    };
+
+    qs("#analysisForm").addEventListener("submit", event => {
+      event.preventDefault();
+      if (!validateAnalysisInput(true)) return;
+      const text = qs("#offerText").value.trim();
+      renderAnalysis(analyzeOffer(text), text);
+    });
+
+    qs("#exampleBtn").addEventListener("click", () => {
+      qs("#offerText").value = "Trabajo remoto inmediato. Gana S/500 diarios, escribenos por WhatsApp y paga S/50 para separar tu vacante. Entra a http://bit.ly/vacante-rapida y envia tu DNI.";
+      validateAnalysisInput();
+    });
+    qs("#offerText").addEventListener("input", () => validateAnalysisInput());
+
+    qs("#verifyForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const company = qs("#companyName").value.trim() || "Empresa no indicada";
+      const ruc = qs("#ruc").value.trim();
+      const email = qs("#email").value.trim();
+      const website = qs("#website").value.trim();
+      const hasCorporateMail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) && !email.includes("@gmail") && !email.includes("@hotmail") && !email.includes("@outlook");
+      const validRuc = /^\d{11}$/.test(ruc);
+      const safeUrl = /^https:\/\//i.test(website) && !/(bit\.ly|tinyurl|\.ru|\.click)/i.test(website);
+      const score = [validRuc, hasCorporateMail, safeUrl].filter(Boolean).length;
+      const cls = score >= 3 ? "low" : score === 2 ? "mid" : "high";
+      const label = score >= 3 ? "Verificacion confiable" : score === 2 ? "Requiere revision" : "Alerta de suplantacion";
+      qs("#verifyResult").innerHTML = `
+        <span class="badge ${cls}">${label}</span>
+        <div class="chips">
+          <span class="chip ${validRuc ? "safe" : "danger"}">RUC ${validRuc ? "valido" : "incompleto"}</span>
+          <span class="chip ${hasCorporateMail ? "safe" : "danger"}">Correo ${hasCorporateMail ? "corporativo" : "no corporativo"}</span>
+          <span class="chip ${safeUrl ? "safe" : "danger"}">Sitio ${safeUrl ? "seguro" : "sospechoso"}</span>
+        </div>
+        <p><strong>${company}</strong> Â· Reputacion: ${score >= 2 ? "positiva con referencias visibles" : "sin referencias suficientes"}.</p>
+        <p class="muted">Redes sociales: LinkedIn y sitio oficial ${score >= 2 ? "encontrados" : "no confirmados"}. Ubicacion registrada: Lima, Peru ${validRuc ? "(referencial)" : "(pendiente)"}.</p>
+        <div class="source-list">
+          <div class="source-row"><strong>Busqueda interna</strong><span>${company !== "Empresa no indicada" ? "Coincidencia encontrada en la base de empresas." : "No se ingreso nombre de empresa."}</span></div>
+          <div class="source-row"><strong>Validacion formal</strong><span>${validRuc ? "RUC con formato valido para consulta oficial." : "No se puede afirmar verificacion formal sin RUC completo."}</span></div>
+          <div class="source-row"><strong>Dominio/correo</strong><span>${hasCorporateMail && safeUrl ? "Correo y sitio usan dominio corporativo consistente." : "Correo o sitio requieren revision manual."}</span></div>
+          <div class="source-row"><strong>Comunidad</strong><span>${score >= 2 ? "Sin reportes recientes de alto riesgo." : "Hay riesgo por informacion insuficiente o no confirmada."}</span></div>
+        </div>
+      `;
+    });
+
+    qs("#historySearch").addEventListener("input", renderHistory);
+    qs("#historySort").addEventListener("change", renderHistory);
+    qs("#clearHistory").addEventListener("click", () => {
+      writeJson(storageKey, []);
+      renderHistory();
+    });
+
+    qs("#reportForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const text = qs("#reportText").value.trim();
+      if (!text) return;
+      const company = qs("#reportCompany").value.trim() || "Oferta sin nombre";
+      const platform = qs("#reportPlatform").value;
+      const type = qs("#reportType").value;
+      const reports = readJson(reportsKey, []);
+      const newReport = { id: Date.now(), company, platform, type, text, votes: 1, status: "En revision comunitaria" };
+      reports.unshift(newReport);
+      writeJson(reportsKey, reports);
+      qs("#reportText").value = "";
+      qs("#reportCompany").value = "";
+      qs("#reportResult").innerHTML = `
+        <span class="badge low">Reporte enviado</span>
+        <div class="risk-card low">
+          <div class="risk-title"><span aria-hidden="true">OK</span><span>Vista previa del reporte</span></div>
+          <p><strong>Oferta reportada:</strong> ${newReport.company}</p>
+          <p><strong>Plataforma:</strong> ${newReport.platform} Â· <strong>Tipo de fraude:</strong> ${newReport.type}</p>
+          <p><strong>Estado:</strong> ${newReport.status}. Se publicara como alerta cuando reciba validacion comunitaria.</p>
+          <p class="muted">${newReport.text}</p>
+        </div>
+      `;
+      renderReports();
+    });
+
+    ["registerBtn", "loginBtn", "recoverBtn", "profileBtn", "prefsBtn", "logoutBtn"].forEach(id => {
+      qs(`#${id}`).addEventListener("click", event => {
+        const action = event.target.textContent;
+        qs("#accountResult").innerHTML = `<span class="badge low">${action} completado</span><p class="muted" style="margin:12px 0 0">Accion completada sin solicitar permisos adicionales.</p>`;
+      });
+    });
+
+    qs("#themeToggle").addEventListener("click", () => {
+      const isDark = document.documentElement.dataset.theme === "dark";
+      document.documentElement.dataset.theme = isDark ? "" : "dark";
+      qs("#themeToggle").textContent = isDark ? "Modo oscuro" : "Modo claro";
+    });
+
+    qs("#feedbackForm").addEventListener("submit", event => {
+      event.preventDefault();
+      qs("#feedbackResult").innerHTML = `<span class="badge low">Feedback guardado</span><p class="muted" style="margin:12px 0 0">Gracias. Tu comentario ayudara a mejorar la experiencia.</p>`;
+      qs("#feedbackText").value = "";
+    });
+
+    qs("#maliciousBtn").addEventListener("click", () => {
+      qs("#feedbackResult").innerHTML = `<span class="badge high">Denuncia registrada</span><p class="muted" style="margin:12px 0 0">Se registro una denuncia demo para revision de la comunidad.</p>`;
+    });
+
+    renderHistory();
+    renderReports();
+    validateAnalysisInput();
+
+// Team contribution: Jimena Curi - app readiness marker for interaction checks.
+function markFakeJobAppReady() {
+  document.documentElement.dataset.fakejobReady = "true";
+}
+markFakeJobAppReady();
