@@ -1,4 +1,4 @@
-const qs = (selector) => document.querySelector(selector);
+﻿const qs = (selector) => document.querySelector(selector);
     const storageKey = "fakejob-history";
     const reportsKey = "fakejob-reports";
     let lastAnalysis = null;
@@ -158,7 +158,7 @@ const qs = (selector) => document.querySelector(selector);
           : "Puedes continuar con cautela, manteniendo buenas practicas de privacidad.";
       const signalChips = result.signals.length
         ? result.signals.map(signal => `<span class="chip danger">${signal}</span>`).join("")
-        : `<span class="chip safe">sin señales críticas</span>`;
+        : `<span class="chip safe">sin seÃ±ales crÃ­ticas</span>`;
       const recommended = recommendations.slice(0, result.score >= 70 ? 5 : 3)
         .map(item => `<li>${item}</li>`).join("");
       qs("#analysisResult").innerHTML = `
@@ -169,7 +169,7 @@ const qs = (selector) => document.querySelector(selector);
           <p class="muted">Este resultado usa etiqueta, texto, icono, borde y patron visual para no depender solo del color.</p>
         </div>
         <div class="chips">${signalChips}</div>
-        <p><strong>Explicacion:</strong> El sistema encontro ${result.signals.length || "pocas"} señales de riesgo asociadas a fraude laboral, phishing o manipulacion.</p>
+        <p><strong>Explicacion:</strong> El sistema encontro ${result.signals.length || "pocas"} seÃ±ales de riesgo asociadas a fraude laboral, phishing o manipulacion.</p>
         <ul>${recommended}</ul>
         <div class="actions">
           <button class="btn secondary small" type="button" id="saveAnalysis">Guardar historial</button>
@@ -221,7 +221,7 @@ const qs = (selector) => document.querySelector(selector);
             <div>
               <span class="badge ${item.score >= 70 ? "high" : item.score >= 40 ? "mid" : "low"}">${item.level}: ${item.score}%</span>
               <p style="margin:10px 0">${item.text.slice(0, 180)}${item.text.length > 180 ? "..." : ""}</p>
-              <p class="muted">${item.date} · Señales: ${item.signals.join(", ") || "sin señales críticas"}</p>
+              <p class="muted">${item.date} Â· SeÃ±ales: ${item.signals.join(", ") || "sin seÃ±ales crÃ­ticas"}</p>
             </div>
             <div class="actions" style="margin-top:0">
               <button class="btn ghost small" type="button" onclick="showDetail(${item.id})">Ver detalle</button>
@@ -235,7 +235,7 @@ const qs = (selector) => document.querySelector(selector);
     window.showDetail = function(id) {
       const item = readJson(storageKey, []).find(entry => entry.id === id);
       if (!item) return;
-      alert(`Detalle del analisis\n\nRiesgo: ${item.level} (${item.score}%)\nSeñales: ${item.signals.join(", ") || "sin señales"}\n\n${item.text}`);
+      alert(`Detalle del analisis\n\nRiesgo: ${item.level} (${item.score}%)\nSeÃ±ales: ${item.signals.join(", ") || "sin seÃ±ales"}\n\n${item.text}`);
     };
 
     window.deleteItem = function(id) {
@@ -253,7 +253,7 @@ const qs = (selector) => document.querySelector(selector);
         <article class="item">
           <span class="badge mid">${report.status || "En revision comunitaria"}</span>
           <h3 style="margin-top:10px">${report.company || "Oferta reportada"}</h3>
-          <p class="muted">Plataforma: ${report.platform || "No indicada"} · Tipo: ${report.type || "No indicado"}</p>
+          <p class="muted">Plataforma: ${report.platform || "No indicada"} Â· Tipo: ${report.type || "No indicado"}</p>
           <p><strong>Vista previa del reporte:</strong></p>
           <p>${report.text}</p>
           <p class="muted">Validaciones comunitarias: ${report.votes}</p>
@@ -305,7 +305,7 @@ const qs = (selector) => document.querySelector(selector);
           <span class="chip ${hasCorporateMail ? "safe" : "danger"}">Correo ${hasCorporateMail ? "corporativo" : "no corporativo"}</span>
           <span class="chip ${safeUrl ? "safe" : "danger"}">Sitio ${safeUrl ? "seguro" : "sospechoso"}</span>
         </div>
-        <p><strong>${company}</strong> · Reputacion: ${score >= 2 ? "positiva con referencias visibles" : "sin referencias suficientes"}.</p>
+        <p><strong>${company}</strong> Â· Reputacion: ${score >= 2 ? "positiva con referencias visibles" : "sin referencias suficientes"}.</p>
         <p class="muted">Redes sociales: LinkedIn y sitio oficial ${score >= 2 ? "encontrados" : "no confirmados"}. Ubicacion registrada: Lima, Peru ${validRuc ? "(referencial)" : "(pendiente)"}.</p>
         <div class="source-list">
           <div class="source-row"><strong>Busqueda interna</strong><span>${company !== "Empresa no indicada" ? "Coincidencia encontrada en la base de empresas." : "No se ingreso nombre de empresa."}</span></div>
@@ -341,7 +341,7 @@ const qs = (selector) => document.querySelector(selector);
         <div class="risk-card low">
           <div class="risk-title"><span aria-hidden="true">OK</span><span>Vista previa del reporte</span></div>
           <p><strong>Oferta reportada:</strong> ${newReport.company}</p>
-          <p><strong>Plataforma:</strong> ${newReport.platform} · <strong>Tipo de fraude:</strong> ${newReport.type}</p>
+          <p><strong>Plataforma:</strong> ${newReport.platform} Â· <strong>Tipo de fraude:</strong> ${newReport.type}</p>
           <p><strong>Estado:</strong> ${newReport.status}. Se publicara como alerta cuando reciba validacion comunitaria.</p>
           <p class="muted">${newReport.text}</p>
         </div>
