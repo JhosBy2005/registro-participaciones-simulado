@@ -24,3 +24,4 @@ Generado: dom 14/06/2026 15:36:27.47
 2026-04-14 docs: casos de estudio de estafa por pago adelantado
 2026-04-24 docs: investigacion de canales de contacto sospechosos
 2026-04-24 docs: checklist de se├▒ales de alerta de reclutadores falsos
+2026-04-30 docs: fuente de datos tabla comparativa real-vs-fraude
