@@ -7,3 +7,4 @@ IHC y Tecnologias Moviles - UPC 202610
 2026-04-27 Santana: Agregar enlace de saltar al contenido
 2026-04-27 Santana: Notas de verificacion de compatibilidad entre navegadores
 2026-05-04 Jimena: Corregir regex de validacion de salario
+2026-05-05 Darnell: Correcciones en enlaces de navegacion
