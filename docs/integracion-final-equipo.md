@@ -26,3 +26,4 @@ Generado: dom 14/06/2026 15:36:27.47
 2026-04-24 docs: checklist de se├▒ales de alerta de reclutadores falsos
 2026-04-30 docs: fuente de datos tabla comparativa real-vs-fraude
 2026-05-01 docs: investigacion de testimonios y casos de ejemplo
+2026-05-07 docs: notas finales de contenido pre-entrega
