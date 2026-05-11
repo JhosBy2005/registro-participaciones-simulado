@@ -15,3 +15,4 @@ IHC y Tecnologias Moviles - UPC 202610
 2026-05-11 Darnell: Agregar alt text a todas las imagenes
 2026-05-11 Jimena: Eliminar console.log de depuracion
 2026-05-11 Santana: Validacion final pre-push e integridad de archivos
+2026-05-11 Jimena: Revision final de JS y comentarios inline
