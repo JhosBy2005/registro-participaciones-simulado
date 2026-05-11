@@ -11,3 +11,4 @@ IHC y Tecnologias Moviles - UPC 202610
 2026-05-05 Jimena: Resolver calculo de offset en scroll highlight
 2026-05-05 Mauricio: Breakpoints responsivos para tablets
 2026-05-07 Jimena: Correcccion caso borde input vacio en formulario
+2026-05-11 Mauricio: Ajustes de layout movil en todas las secciones
