@@ -19,3 +19,4 @@ IHC y Tecnologias Moviles - UPC 202610
 2026-05-11 Mauricio: Ajuste de hover y transiciones en tarjetas
 2026-05-12 Jimena: Mejorar timing de mensajes de error en formulario
 2026-05-12 Darnell: Revision semantica final del HTML
+2026-05-12 Jimena: Debounce en input del analizador para rendimiento
