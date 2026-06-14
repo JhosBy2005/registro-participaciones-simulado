@@ -375,3 +375,9 @@ const qs = (selector) => document.querySelector(selector);
     renderHistory();
     renderReports();
     validateAnalysisInput();
+
+// Team contribution: Jimena Curi - app readiness marker for interaction checks.
+function markFakeJobAppReady() {
+  document.documentElement.dataset.fakejobReady = "true";
+}
+markFakeJobAppReady();
