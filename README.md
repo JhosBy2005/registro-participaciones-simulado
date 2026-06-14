@@ -40,6 +40,22 @@ https://JhosBy2005.github.io/registro-participaciones-simulado/
 
 El archivo `registro_participaciones_simulado.txt` es una simulacion y no representa historial Git real. Para que GitHub muestre participacion real de cada integrante, cada persona debe entrar como colaborador, hacer cambios desde su propia cuenta y subir sus propios commits.
 
+Para invitar colaboradores desde consola puedes usar:
+
+```bat
+invitar_colaboradores_github.bat
+```
+
+El script requiere GitHub CLI y los usernames de GitHub de cada integrante.
+
+Cuando los colaboradores ya aceptaron la invitacion, cada integrante puede registrar una contribucion real con:
+
+```bat
+registrar_participacion_real.bat
+```
+
+Ese script debe ejecutarlo cada persona desde su propia cuenta de GitHub. Detecta el usuario autenticado, aplica un cambio pequeno segun su area, crea un commit real y hace push.
+
 ## Equipo
 
 - Darnell Cuba `<darnellcuba2006@hotmail.com>`

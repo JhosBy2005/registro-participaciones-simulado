@@ -6,7 +6,7 @@ No debe presentarse como evidencia de commits reales ni de autoria real.
 
 Proyecto: FakeJobDetector
 Curso: IHC y Tecnologias Moviles - ciclo 202610
-Generado: dom 14/06/2026 13:09:21.21
+Generado: dom 14/06/2026 14:22:23.24
 
 INTEGRANTES Y AREAS
 -------------------
