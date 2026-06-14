@@ -56,6 +56,14 @@ registrar_participacion_real.bat
 
 Ese script debe ejecutarlo cada persona desde su propia cuenta de GitHub. Detecta el usuario autenticado, aplica un cambio pequeno segun su area, crea un commit real y hace push.
 
+Si el equipo trabajo junto en la integracion final, tambien se puede registrar un commit de integracion con coautores:
+
+```bat
+registrar_integracion_con_coautores.bat
+```
+
+Ese commit queda hecho por la cuenta local que lo ejecuta, pero incluye trailers `Co-authored-by` para acreditar colaboracion real. GitHub mostrara los coautores si los correos estan vinculados a sus cuentas.
+
 ## Equipo
 
 - Darnell Cuba `<darnellcuba2006@hotmail.com>`
