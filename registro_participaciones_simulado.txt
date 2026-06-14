@@ -1,0 +1,70 @@
+REGISTRO SIMULADO DE PARTICIPACIONES
+=====================================
+
+IMPORTANTE: Este documento es una simulacion. No representa historial Git real.
+No debe presentarse como evidencia de commits reales ni de autoria real.
+
+Proyecto: FakeJobDetector
+Curso: IHC y Tecnologias Moviles - ciclo 202610
+Generado: dom 14/06/2026 12:37:23.47
+
+INTEGRANTES Y AREAS
+-------------------
+- Integrante 1: HTML y estructura
+- Integrante 2: CSS y diseno visual
+- Integrante 3: JavaScript e interacciones
+- Integrante 4: Investigacion y contenido
+- Integrante 5: Formularios y accesibilidad
+
+DETALLE SIMULADO POR SEMANA
+---------------------------
+
+SEMANA 1 - 2026-04-01 al 2026-04-07
+01. 2026-04-01 09:18 - Integrante 1 - feat: define landing page structure and header sections
+02. 2026-04-01 21:42 - Integrante 3 - chore: add base script file and interaction placeholders
+03. 2026-04-02 16:10 - Integrante 2 - style: create initial color palette and typography rules
+04. 2026-04-04 11:35 - Integrante 4 - docs: draft problem statement and target user notes
+05. 2026-04-06 19:28 - Integrante 1 - feat: add hero content and main navigation links
+
+SEMANA 2 - 2026-04-08 al 2026-04-14
+06. 2026-04-08 08:52 - Integrante 5 - feat: add contact form fields and labels
+07. 2026-04-09 22:16 - Integrante 3 - feat: implement mobile menu toggle behavior
+08. 2026-04-10 15:33 - Integrante 2 - style: refine spacing for cards and section layout
+09. 2026-04-12 10:44 - Integrante 4 - docs: add fake job warning signs content
+10. 2026-04-13 20:07 - Integrante 3 - fix: prevent empty form submission in demo flow
+
+SEMANA 3 - 2026-04-15 al 2026-04-21
+11. 2026-04-15 17:21 - Integrante 1 - feat: create results section for job analysis output
+12. 2026-04-16 23:04 - Integrante 3 - feat: add keyword scoring logic for suspicious listings
+13. 2026-04-18 12:12 - Integrante 5 - fix: improve form focus states and required field hints
+14. 2026-04-19 18:39 - Integrante 2 - style: adjust responsive grid for tablet screens
+
+SEMANA 4 - 2026-04-22 al 2026-04-28
+15. 2026-04-22 09:41 - Integrante 4 - docs: add user persona summary and scenario notes
+16. 2026-04-23 21:25 - Integrante 2 - style: polish buttons and interactive states
+17. 2026-04-25 14:58 - Integrante 1 - refactor: reorganize page sections for clearer reading order
+18. 2026-04-26 22:31 - Integrante 3 - fix: handle pasted multiline job descriptions
+19. 2026-04-28 11:09 - Integrante 5 - feat: add accessible error messages for form validation
+
+SEMANA 5 - 2026-04-29 al 2026-05-05
+20. 2026-04-29 20:18 - Integrante 3 - refactor: simplify scoring thresholds and result labels
+21. 2026-05-01 10:36 - Integrante 2 - style: improve mobile spacing and footer contrast
+22. 2026-05-02 16:49 - Integrante 4 - docs: update references and presentation notes
+23. 2026-05-04 08:57 - Integrante 1 - fix: align navigation anchors with page sections
+
+SEMANA 6 - 2026-05-06 al 2026-05-12
+24. 2026-05-06 19:44 - Integrante 5 - fix: improve keyboard navigation through form controls
+25. 2026-05-07 13:22 - Integrante 2 - style: add final visual adjustments for presentation
+26. 2026-05-09 22:03 - Integrante 3 - fix: tune risk messages for edge cases
+27. 2026-05-11 09:26 - Integrante 4 - docs: prepare final project summary and conclusions
+28. 2026-05-12 18:15 - Integrante 1 - chore: organize final files for delivery
+
+RESUMEN SIMULADO POR INTEGRANTE
+-------------------------------
+- Integrante 1: 6 participaciones simuladas
+- Integrante 2: 6 participaciones simuladas
+- Integrante 3: 7 participaciones simuladas
+- Integrante 4: 5 participaciones simuladas
+- Integrante 5: 4 participaciones simuladas
+
+TOTAL: 28 participaciones simuladas
