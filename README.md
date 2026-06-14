@@ -19,3 +19,6 @@ UPC - IHC y Tecnologias Moviles 202610
 ## Despliegue
 Hospedado en Netlify con despliegue automatico desde rama main.
 Repositorio: github.com/JhosBy2005/registro-participaciones-simulado
+
+## v1.0
+Entrega final - ciclo 202610 - IHC y Tecnologias Moviles UPC
