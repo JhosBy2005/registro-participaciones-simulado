@@ -1,47 +1,49 @@
-# Registro de participaciones simulado
+# FakeJobDetector
 
-Este repositorio contiene materiales para generar y revisar un registro simulado de participaciones de un proyecto universitario.
+Proyecto web para apoyar la deteccion de ofertas laborales sospechosas o fraudulentas. La pagina presenta señales de alerta, recursos de verificacion y una experiencia de analisis orientada a usuarios que buscan empleo.
 
-## Contenido
+## Archivos principales
 
-- `registro_participaciones_simulado.bat`: genera un archivo `.txt` con participaciones simuladas por semana.
-- `registro_participaciones_simulado.txt`: ejemplo ya generado del registro simulado.
-- `crear_repositorio_github.bat`: automatiza la creacion de este repositorio en GitHub usando Git y GitHub CLI.
+- `index.html`: pagina web final del proyecto.
+- `css/styles.css`: estilos de la pagina.
+- `js/main.js`: interacciones y logica del sitio.
+- `assets/`: carpeta para recursos estaticos del proyecto.
+- `registro_participaciones_simulado.bat`: generador local de un registro simulado de participaciones.
+- `registro_participaciones_simulado.txt`: registro simulado generado para planificacion o anexo interno.
 
-## Nota importante
+## Como ver la pagina
 
-Este material es una simulacion. No representa historial Git real, no crea commits con autores falsos y no debe presentarse como evidencia de actividad real en GitHub.
+Abre `index.html` en el navegador.
 
-## Como generar el registro
+## GitHub Pages
 
-Ejecuta:
-
-```bat
-registro_participaciones_simulado.bat
-```
-
-El script generara o reemplazara:
+Cuando el repositorio este publicado, activa GitHub Pages desde:
 
 ```text
-registro_participaciones_simulado.txt
+Settings > Pages > Build and deployment > Deploy from a branch
 ```
 
-## Como crear el repositorio en GitHub
+Selecciona:
 
-Requisitos:
-
-- Git para Windows instalado.
-- GitHub CLI instalado.
-- Sesion iniciada con:
-
-```bat
-gh auth login
+```text
+Branch: main
+Folder: / (root)
 ```
 
-Luego ejecuta:
+Luego guarda los cambios. El enlace deberia quedar con este formato:
 
-```bat
-crear_repositorio_github.bat
+```text
+https://JhosBy2005.github.io/registro-participaciones-simulado/
 ```
 
-El script pedira el nombre del repositorio y si debe ser publico o privado. Despues inicializara Git, creara un commit real con estos archivos y publicara el repositorio en tu cuenta de GitHub.
+## Participacion del equipo
+
+El archivo `registro_participaciones_simulado.txt` es una simulacion y no representa historial Git real. Para que GitHub muestre participacion real de cada integrante, cada persona debe entrar como colaborador, hacer cambios desde su propia cuenta y subir sus propios commits.
+
+## Equipo
+
+- Darnell Cuba `<darnellcuba2006@hotmail.com>`
+- Mauricio Valverde `<mauricio.leoval@gmail.com>`
+- Jimena Curi `<jimenacha.curi@gmail.com>`
+- José Martinez `<jalonso.m.5.7@gmail.com>`
+- José Santana `<santanapromaster@gmail.com>`
