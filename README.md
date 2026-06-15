@@ -36,6 +36,31 @@ Luego guarda los cambios. El enlace deberia quedar con este formato:
 https://JhosBy2005.github.io/registro-participaciones-simulado/
 ```
 
+## API simple
+
+Este repositorio incluye endpoints simples en la carpeta `api/`:
+
+- `/api/health`: comprueba que la API este activa.
+- `/api/analyze`: analiza una oferta laboral enviada por `POST`.
+
+Ejemplo de cuerpo para `/api/analyze`:
+
+```json
+{
+  "text": "Trabajo remoto, gana S/500 diarios. Escribenos por WhatsApp y paga S/50."
+}
+```
+
+GitHub Pages solo publica archivos estaticos, por eso no ejecuta esta API. Para lanzarla rapido, importa este repositorio en Vercel y despliegalo. Vercel detectara la carpeta `api/` como funciones serverless.
+
+Pasos:
+
+1. Entra a Vercel e inicia sesion con GitHub.
+2. Elige `Add New Project`.
+3. Importa `JhosBy2005/registro-participaciones-simulado`.
+4. Deja la configuracion por defecto y presiona `Deploy`.
+5. Prueba la API en `https://TU-PROYECTO.vercel.app/api/health`.
+
 ## Participacion del equipo
 
 El archivo `registro_participaciones_simulado.txt` es una simulacion y no representa historial Git real. Para que GitHub muestre participacion real de cada integrante, cada persona debe entrar como colaborador, hacer cambios desde su propia cuenta y subir sus propios commits.
