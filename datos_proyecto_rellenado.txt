@@ -1,0 +1,68 @@
+Nombre del proyecto:
+FakeJobDetector
+
+Descripcion:
+Proyecto web para apoyar la deteccion de ofertas laborales sospechosas o fraudulentas. La pagina muestra senales de alerta, recursos de verificacion y una experiencia de analisis para usuarios que buscan empleo.
+
+Curso / ciclo:
+IHC y Tecnologias Moviles - ciclo 202610
+
+Repositorio GitHub:
+https://github.com/JhosBy2005/registro-participaciones-simulado.git
+
+Fecha inicio:
+2026-04-01 segun el registro simulado de participaciones.
+Nota: el historial Git real del repositorio empieza el 2026-06-14.
+
+Fecha final:
+2026-06-14 segun la integracion final documentada en el repositorio.
+Nota: el registro simulado de participaciones termina el 2026-05-12.
+
+Semana de examenes sin commits:
+No especificada explicitamente en los archivos revisados. En el registro simulado no aparecen commits despues del 2026-05-12.
+
+Archivos principales:
+- index.html
+- css/styles.css
+- js/main.js
+
+Integrantes:
+1. Nombre: Darnell Cuba
+   GitHub: darnell1910
+   Email: darnellcuba2006@hotmail.com
+   Area: HTML, estructura, navegacion y secciones principales
+   Aporte: alto
+
+2. Nombre: Mauricio Valverde
+   GitHub: mieioma
+   Email: mauricio.leoval@gmail.com
+   Area: CSS, diseno visual, responsive y consistencia visual
+   Aporte: alto
+
+3. Nombre: Jimena Curi
+   GitHub: jimenacuri
+   Email: jimenacha.curi@gmail.com
+   Area: JavaScript, validaciones e interacciones
+   Aporte: alto
+
+4. Nombre: Jose Martinez
+   GitHub: chopper0507
+   Email: jalonso.m.5.7@gmail.com
+   Area: investigacion, contenido y senales de fraude
+   Aporte: medio
+
+5. Nombre: Jose Santana
+   GitHub: JhosBy2005
+   Email: santanapromaster@gmail.com
+   Area: integracion final, accesibilidad, README, repositorio y despliegue
+   Aporte: medio
+
+Repo actual:
+- Ya tiene archivos
+- Ya tiene remote configurado: si
+- Rama principal: main
+
+Notas de revision:
+- Remote actual: origin -> https://github.com/JhosBy2005/registro-participaciones-simulado.git
+- Archivos versionados principales detectados: README.md, index.html, css/styles.css, js/main.js, docs/integracion-final-equipo.md, registro_participaciones_simulado.txt
+- Hay un archivo nuevo sin trackear: generar_commits.bat
